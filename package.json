@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "JavaScript development environment",
   "scripts": {
+    "prestart": "node buildScripts/startMessage.js",
     "start": "node buildScripts/srcServer.js"
   },
   "author": "Chathuranga Jayamal",
@@ -13,6 +14,7 @@
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "babel-loader": "^8.1.0",
+    "chalk": "^4.0.0",
     "express": "^4.17.1",
     "open": "^7.0.4",
     "webpack": "^4.43.0",
