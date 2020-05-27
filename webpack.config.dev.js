@@ -6,7 +6,7 @@ export default {
   noInfo: false,
   entry: [
     //application entry point
-    path.resolve(__dirname, "src/index"),
+    path.resolve(__dirname, "src/index"), //will look for src/index.js
   ],
   target: "web", //could target to node if running on node
   output: {
