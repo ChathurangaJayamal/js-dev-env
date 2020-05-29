@@ -10,7 +10,9 @@
   },
   "author": "Chathuranga Jayamal",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "whatwg-fetch": "^1.0.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.6",
