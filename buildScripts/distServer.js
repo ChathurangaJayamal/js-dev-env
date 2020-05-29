@@ -2,6 +2,7 @@
 import express from "express";
 import path from "path";
 import open from "open";
+import compression from "compression";
 /* // we are no longer using webpack as we are serving static built files
 // import webpack from "webpack";
 // import config from "../webpack.config.dev"; */
@@ -9,6 +10,8 @@ import open from "open";
 const port = 3000;
 const app = express();
 // const compiler = webpack(config);
+
+app.use(compression());
 
 /* app.use(
   require("webpack-dev-middleware")(compiler, {
