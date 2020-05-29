@@ -1,8 +1,9 @@
 import path from "path";
+import webpack from "webpack";
 
 export default {
   debug: true,
-  devtool: "inline-source-map",
+  devtool: "source-map",
   noInfo: false,
   entry: [
     //application entry point
@@ -10,12 +11,17 @@ export default {
   ],
   target: "web", //could target to node if running on node
   output: {
-    //where it should create our dev bundle (it's a in memory :)) so is a simulation
-    path: path.resolve(__dirname, "src"),
+    path: path.resolve(__dirname, "dist"),
     publicPath: "/",
     filename: "bundle.js",
   },
-  plugins: [],
+  plugins: [
+    // Eliminate duplicate packages when generating bundle
+    new webpack.optimize.DedupePlugin(),
+
+    //Minify JS
+    new webpack.optimize.UglifyJsPlugin(),
+  ],
   module: {
     //file types to handle
     loaders: [
